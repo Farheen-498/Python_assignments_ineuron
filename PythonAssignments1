@@ -33,12 +33,16 @@ Q4. In what all domains can we use Python?
 
 ans. ML, Data Analytics, 
 
-Q5. What are variable and how can we declare them? Sol. Variables are which stores the values. name="PythonGeeks" _no = 5
+Q5. What are variable and how can we declare them? 
+Sol. Variables are which stores the values. name="PythonGeeks" _no = 5
 
 Q6. How can we take an input from the user in Python? By using input()
 
-input() 
-
+Ans. By using the input() function. 
+For eg:- 
+ String_name = input("what's ur name?"
+ Print(String_name)
+ 
 Q7. What is the default datatype of the value that has been taken as an input using input() function? The default value is String.
 Ans. String is the deafult datatype.
 
@@ -48,9 +52,9 @@ Q8. What is type casting?
 Ans. Conversion from a one data type to another one.
 
 Q9. Can we take more than one input from the user using single input() function? If yes, how? If no, why?
-
+ Ans. Yes, we can using the split() function. To make multiple inputs from the users.
 Q10. What are keywords?
-
+ Ans.  
 Q11. Can we use keywords as a variable? Support your answer with reason.
 
 Q12. What is indentation? What's the use of indentaion in Python?
