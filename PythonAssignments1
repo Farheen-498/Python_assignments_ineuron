@@ -162,6 +162,19 @@ If the number is greater than 150, then skip it and move to the next number
 If the number is greater than 500, then stop the loop
 
 numbers = [12, 75, 150, 180, 145, 525, 50]
+
+Ans.
+numbers = [12, 75, 150, 180, 145, 525, 50]
+result=[]
+for num in numbers:
+    if(num%5==0):
+        if(num>150):
+            result.append(num)
+            continue
+        elif(num>500):
+            result.append(num)
+            break
+    print(result)  
 Q26. What is a string? How can we declare string in Python?
 
 Q27. How can we access the string using its index?
