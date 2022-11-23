@@ -37,7 +37,6 @@ Q5. What are variable and how can we declare them?
 Sol. Variables are which stores the values. name="PythonGeeks" _no = 5
 
 Q6. How can we take an input from the user in Python? By using input()
-
 Ans. By using the input() function. 
 For eg:- 
  String_name = input("what's ur name?"
@@ -47,30 +46,66 @@ Q7. What is the default datatype of the value that has been taken as an input us
 Ans. String is the deafult datatype.
 
 Q8. What is type casting?
-
-
 Ans. Conversion from a one data type to another one.
 
 Q9. Can we take more than one input from the user using single input() function? If yes, how? If no, why?
- Ans. Yes, we can using the split() function. To make multiple inputs from the users.
-Q10. What are keywords?
- Ans.  
+ Ans. 
+ Yes, we can using the split() function. To make multiple inputs from the users.
+ e.g:- a, b, c = map(int, input("Enter the Numbers : ").split())
+    print("The Numbers are : ",end = " ")
+    print(a, b, c)
+
+ Q10. What are keywords?
+ Ans. Keywords are some predefined and reserved words in python that have special meanings. Keywords are used to define the syntax of the coding. 
+ 
 Q11. Can we use keywords as a variable? Support your answer with reason.
+Ans. We cannot use a keyword as a variable name, function name or any other identifier. They are used to define the syntax and structure of the Python language
 
 Q12. What is indentation? What's the use of indentaion in Python?
+Ans. Indentation refers to the spaces at the beginning of a code line. Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important. 
+Python uses indentation to indicate a block of code.
 
 Q13. How can we throw some output in Python?
+Ans. There are several ways to deliver the output of a program. In Python, we use the print () function to output data to the screen. 
+
 
 Q14. What are operators in Python?
+Ans. Python Operators in general are used to perform operations on values and variables.
+These are standard symbols used for the purpose of logical and arithmetic operations. 
 
 Q15. What is difference between / and // operators?
+Ans. The difference between // and / is that // performs floor division, and / performs floating point division.
+Floating point division is regular division, and floor division truncates the resulting quotient.
 
 Q16. Write a code that gives following as an output.
 
 iNeuroniNeuroniNeuroniNeuron
+
+Ans. print(("iNeuron")*4)
+
 Q17. Write a code to take a number as an input from the user and check if the number is odd or even.
+Ans. num = int(input("Enter a number: "))
+if (num % 2) == 0:
+   print("{0} is Even".format(num))
+else:
+   print("{0} is Odd".format(num))
 
 Q18. What are boolean operator?
+Ans. The logical operators and, or and not are also referred to as boolean operators. 
+While and as well as or operator needs two operands, which may evaluate to true or false, not operator needs one operand evaluating to true or false.
+e.g:-
+>>> a=50
+>>> b=25
+>>> a>40 and b>40
+False
+>>> a>100 and b<50
+False
+>>> a==0 and b==0
+False
+>>> a>0 and b>0
+True
+
+Boolean and operator returns true if both operands return true
 
 Q19. What will the output of the following?
 
@@ -82,15 +117,41 @@ True and False and True
 
 1 or 0 or 0
 Q20. What are conditional statements in Python?
+Ans.  A conditional statement in python, also called a condition constructs, is a statement that accommodates a condition inside itself. 
+This condition is constructed using the bitwise, boolean, and comparison operators in Python.
 
 Q21. What is use of 'if', 'elif' and 'else' keywords?
+The elif is short for else if. It allows us to check for multiple expressions. If the condition for if is False, it checks the condition of the next elif block and so on. 
+If all the conditions are False, the body of else is executed. Only one block among the several if...elif...else blocks is executed according to the condition.
 
 Q22. Write a code to take the age of person as an input and if age >= 18 display "I can vote". If age is < 18 display "I can't vote".
+Ans. 
+age=int(input("enter your age,please!\n23"))
+if(age >= 18):
+    print("I can vote")
+elif(age < 18):
+    print("I can't vote")
 
 Q23. Write a code that displays the sum of all the even numbers from the given list.
 
-numbers = [12, 75, 150, 180, 145, 525, 50]
+Ans. list1=[12, 75, 150, 180, 145, 525, 50]
+even_sum=0
+for num in list1:
+    if(num%2==0):
+        even_sum=even_sum+num
+print(even_sum)
+
 Q24. Write a code to take 3 numbers as an input from the user and display the greatest no as output.
+Ans. a=int(input("Enter first no.: \n"))
+b=int(input("Enter second no.: \n"))
+c=int(input("Enter third no.: \n"))
+if(a>=b) and (a>=c):
+    largest = a
+elif(b>=a) and (b>=c):
+    largest = b
+elif(c>=a) and (c>=b):
+    largest = c
+print("the largest amongst them is : ",largest)
 
 Q25. Write a program to display only those numbers from a list that satisfy the following conditions
 
