@@ -366,51 +366,121 @@ for key,value in myDict.items():
     
 
 Q61. Create a nested dictionary and access all the element in the inner dictionary.
+Sol. It is dictionary inside a dictionary. We can access by the following code:
+nested_dict = { 1:{"name":"Farhen","age":"25"},
+                2:{"name":"Ramani","age":"20"}}
+print(nested_dict[2]["name"])
+print(nested_dict[1]["age"])
+
 
 Q62. What is the use of get() function?
+Sol. get fuction will return the value of the item in the dict.
 
 Q63. What is the use of items() function?
+Sol. the items () method returns a view object that displays a list of a given dictionary's (key, value) tuple pair.
 
 Q64. What is the use of pop() function?
+Sol. list pop () is an inbuilt function in Python that removes and returns the last value from the List or the given index value. 
 
 Q65. What is the use of popitems() function?
+Sol. The popitem() method removes the item that was last inserted into the dictionary. In versions before 3.7, the popitem() method removes a random item.
 
 Q66. What is the use of keys() function?
+Sol. The function displays a object containing all the keys of the dictionary.
 
 Q67. What is the use of values() function?
-
+ The function displays a object containing all the values of the dictionary.
+ 
 Q68. What are loops in Python?
+Sol.  A loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).
 
 Q69. How many type of loop are there in Python?
+Sol. There are if-else, for, while, nested loops,
 
 Q70. What is the difference between for and while loops?
+Sol. For loop: When we need to iterate over a sequence where we know the no of iterations before time but While Loop is morely used when we don't know the no of iteration before time.
+
 
 Q71. What is the use of continue statement?
+Sol. Continue statement will skip the result of that particular iteration(for or while) and will move forward to the next iteration.
+
 
 Q72. What is the use of break statement?
+Sol. Break statement will end the iterations and will come out of the loop.
+
 
 Q73. What is the use of pass statement?
+Sol. If a user dosen't know what to write int the code, they will simply write pass statement where empty code is not allowed which will pass the particular function, class or a statement.
+
 
 Q74. What is the use of range() function?
+Sol. Range function is used to sequence numbers by using start, stop and step parameters. range(start, stop) where stop parameter will be exclusive.
 
 Q75. How can you loop over a dictionary?
-
+Sol. my_dict ={'Age':'23','Name':'Farheen','Dept':'Data Engg','Salary':'Rs 30000'}
+for k,v in my_dict.items():
+    print(k,'-->',v)
+    
+ __________________________________________   
 Coding problems
+
 Q76. Write a Python program to find the factorial of a given number.
-Sol.def fact(n):
-    fac=1
-    for i in range(i,n+1):
-        fac=fac*i
-    print(fac) 
+Sol. 
+n=int(input('enter a number you wish to perform fibonaaci series:'))
+n1,n2=0,1
+sum=0
 
-
+for i in range(0,n):
+    print(sum, end=" ")
+    n1=n2
+    n2=sum
+    sum=n1+n2
+    
 Q77. Write a Python program to calculate the simple interest. Formula to calculate simple interest is SI = (PRT)/100
+Sol. p=int(input("Enter principle amount:"))
+r=int(input("Enter rate:"))
+t=int(input("enter time duration:"))
+si = (p*r*t)/100
+print("The simple interest would be:",si)
 
+ 
 Q78. Write a Python program to calculate the compound interest. Formula of compound interest is A = P(1+ R/100)^t.
+Sol. P=int(input("Enter principle amount:"))
+R=int(input("Enter rate:"))
+t=int(input("enter time duration:"))
+A = P*pow((1+ R/100),t)
+CI=A-P
+print("The compound interest would be:",CI)
+
 
 Q79. Write a Python program to check if a number is prime or not.
+sol.
+num = 13
 
+if num > 1:
+    for i in range(2,int(num/2)+1):
+        if (num % i)==0:
+            print('Not a prime number')
+            break
+    else:
+        print('a prime number')
+else:
+    print('not a prime number')
+    
 Q80. Write a Python program to check Armstrong Number.
+Sol. num=int(input('enter a number'))
+sum=0
+temp=num
+while temp > 0:
+    digit=temp%10
+    sum = sum + digit**3
+    temp = temp//10
+    
+if sum==num:
+    print('This is an armstrong number: ',sum)
+else:
+    print('this is not an armstrong number')
+    
 
 Q81. Write a Python program to find the n-th Fibonacci Number.
 
