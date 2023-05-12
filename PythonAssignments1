@@ -629,10 +629,40 @@ Q94. Write a Python program to get all combinations of 2 tuples.
 
 Input : test_tuple1 = (7, 2), test_tuple2 = (7, 8)
 Output : [(7, 7), (7, 8), (2, 7), (2, 8), (7, 7), (7, 2), (8, 7), (8, 2)]
+Sol.
+test_tuple1 = (7, 2)
+test_tuple2 = (7, 8)
+
+output = []
+for i in range(0, len(test_tuple1)):
+    for j in range(0, len(test_tuple2)):
+        output.append((test_tuple1[i], test_tuple2[j]))
+
+for i in range(0, len(test_tuple2)):
+    for j in range(0, len(test_tuple1)):
+        output.append((test_tuple2[i], test_tuple1[j]))
+        
+print(output)
+
+
 Q95. Write a Python program to sort a list of tuples by second item.
 
 Input : [('for', 24), ('Geeks', 8), ('Geeks', 30)] 
 Output : [('Geeks', 8), ('for', 24), ('Geeks', 30)]
+Sol.
+
+input_val = [('for', 24), ('Geeks', 8), ('Geeks', 30)] 
+
+length = len(input_val)
+
+
+for i in range(0, length):
+     for j in range(0, length-i-j):
+        if(input_val[j][1] > input_val[j+1][1]):
+            input_val[j], input_val[j+1] = input_val[j+1], input_val[j]
+
+print(input_val)
+
 Q96. Write a python program to print below pattern.
 
 * 
@@ -640,6 +670,17 @@ Q96. Write a python program to print below pattern.
 * * * 
 * * * * 
 * * * * * 
+
+Sol.
+n = 5
+
+for i in range (1, n+1):
+    for j in range (1, i+1):
+    
+        print("*", end =" ")
+    print("")
+    
+    
 Q97. Write a python program to print below pattern.
 
     *
@@ -647,6 +688,21 @@ Q97. Write a python program to print below pattern.
   ***
  ****
 *****
+
+Sol.
+n = 6
+
+for i in range (n, 0, -1):
+    for j in range (1, i+1):
+    
+        print(" ", end ="")
+    
+    for k in range (i+1, n+1):
+    
+        print("*", end ="")
+    print("")
+    
+    
 Q98. Write a python program to print below pattern.
 
     * 
@@ -654,6 +710,22 @@ Q98. Write a python program to print below pattern.
   * * * 
  * * * * 
 * * * * * 
+
+Sol
+
+n = 6
+
+for i in range (n, 0, -1):
+    for j in range (1, i+1):
+    
+        print(" ", end ="")
+    
+    for k in range (i+1, n+1):
+    
+        print("* ", end ="")
+    print("")
+    
+    
 Q99. Write a python program to print below pattern.
 
 1 
@@ -661,6 +733,16 @@ Q99. Write a python program to print below pattern.
 1 2 3 
 1 2 3 4 
 1 2 3 4 5
+
+Sol
+n = 5
+
+for i in range (1, n+1):
+    for j in range (1, i+1):
+    
+        print(j, end =" ")
+    print("")
+    
 Q100. Write a python program to print below pattern.
 
 A 
@@ -668,8 +750,14 @@ B B
 C C C 
 D D D D 
 E E E E E 
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
+
+Sol
+n = 5
+letters = " ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+for i in range (0, n+1):
+    for j in range (0, i):
+    
+        print(letters[i], end =" ")
+    print("")
+    
