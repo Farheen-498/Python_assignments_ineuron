@@ -13,10 +13,14 @@ progressing from left to right (by default). The search stops at the first place
 
 Q3. How do you distinguish between a class object and an instance object?
 Sol. 
+A Class is like an object constructor, or a "blueprint" for creating objects
+An instance is occuernec of any object.
 
 Q4.                                   
 
 Q5. What is the purpose of the init method?
+Sol.
+Init method is used for 
 
 Q6. What is the process for creating a class instance?
 
