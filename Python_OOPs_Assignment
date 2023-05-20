@@ -12,73 +12,246 @@ An inheritance search looks for an attribute first in the instance object, then 
 progressing from left to right (by default). The search stops at the first place the attribute is found.
 
 Q3. How do you distinguish between a class object and an instance object?
-Sol. 
-A Class is like an object constructor, or a "blueprint" for creating objects
-An instance is occuernec of any object.
+class                                                                object
+1.A class is a template for creating objects in program.              The object is an instance of a class.
+2.A class is a logical entity                                         Object is a physical entity
+3.A class does not allocate memory space when it is created.          Object allocates memory space whenever they are created.
+4.You can declare class only once.                                    You can create more than one object using a class.
+5.Classes can’t be manipulated as they are                            They can be manipulated.
+  not available in memory.
 
-Q4.                                   
+Q4. What makes the first argument in a class’s method function special?
+
+    Self is the first argument to be passed in Constructor and Instance Method.
+  Self is always pointing to Current Object.self represents the instance of the class.
+  By using the “self”  we can access the attributes and methods of the class in python.
+  It binds the attributes with the given arguments.    
+	
 
 Q5. What is the purpose of the init method?
 Sol.
 Init method is used for 
 
 Q6. What is the process for creating a class instance?
+Sol. The process is known as Instantiation, where class instance is created.
 
 Q7. What is the process for creating a class?
+Sol. The creation of class is done by Class class name.
 
-Q8. How would you define the superclasses of a class?
+
+Q8. How would you define the superclasses of a class?\
+Sol. Superclasses is  the parent class of the a child class which is also a base class.
+
 
 Q9. What is the relationship between classes and modules?
+SOl. Classes are blueprints that allow you to create instances with attributes and bound functionality. 
+Classes support inheritance, metaclasses, and descriptors. where in,
+modules are essentially singleton instances of an internal module class, and all their globals are attributes on the module instance
 
 Q10. How do you make instances and classes?
+Sol. class MyfirstClass:
+  x = 5
+  c1 = MyfirstClass()
+print(c1.x)
 
 Q11. Where and how should be class attributes created?
+Sol. A Python class attribute is an attribute of the class.
+class MyClass(object):
+        class_var = 1
 
+        def __init__(self, i_var):
+            self.i_var = i_var
+            
 Q12. Where and how are instance attributes created?
+Sol. A Python class attribute is an attribute of the class.
+class MyClass(object):
+        class_var = 1
 
+        def __init__(self, i_var):
+            self.i_var = i_var
+            
 Q13. What does the term "self" in a Python class mean?
+Sol. self represents the instance of the class. By using the “self”  we can access the attributes and methods of the class in python. It binds the attributes with the given arguments.
 
 Q14. How does a Python class handle operator overloading?
+SOl. we can change the way operators work for user-defined types.
+for eg we can use + for adding two number os can concatenate two strings. 
+This feature in Python that allows the same operator to have different meaning according to the context is called operator overloading.
 
 Q15. When do you consider allowing operator overloading of your classes?
+Sol. 
+class Point:
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return "({0},{1})".format(self.x, self.y)
+
+    def __add__(self, other):
+        x = self.x + other.x
+        y = self.y + other.y
+        return Point(x, y)
+
+
+p1 = Point(1, 2)
+p2 = Point(2, 3)
+
+print(p1+p2)
 
 Q16. What is the most popular form of operator overloading?
+Sol.  adding up operator ‘+’ is most popular one.
 
 Q17. What are the two most important concepts to grasp in order to comprehend Python OOP code?
-
+sol. Both polymorphism and inherirtence are the two crucial concepts in OOPs.
 Q18. Describe three applications for exception processing.
 
 Q19. What happens if you don't do something extra to treat an exception?
+Sol. The code will get interrupted if exceptions are not handled.
 
 Q20. What are your options for recovering from an exception in your script?
+Sol. We can handle the exceptions through try except block, try finally and also try except else. 
 
 Q21. Describe two methods for triggering exceptions in your script.
-
+Sol. triggering exceptions in python can be done by 
+ 1. try except statements
+ 2. raise statement :The raise statement allows the programmer to force a specified exception to occur
+ 
+ 
 Q22. Identify two methods for specifying actions to be executed at termination time, regardless of
 whether or not an exception exists.
+SOl. Finally block always executes irrespective of an exception being thrown or not. The final keyword allows
+ you to create a block of code that follows a try-catch block.
+
+ Finally, clause is optional. It is intended to define clean-up actions which should be that executed in all conditions.
 
 Q23. What is the purpose of the try statement?
+Sol. This is the block where the code that needs to be tested for exception will be placed,  when exception occur program will stop and to handle this we use try block.
+
 
 Q24. What are the two most popular try statement variations?
+1. try:
+ # soem code will get exceuted
+ except:
+ # some code handling
+ 
+ 2. else clause using
+ try:
+# Some Code
+except:
+# Executed if error in the
+# try block
+else:
+# execute if no exception
+
 
 Q25. What is the purpose of the raise statement?
-
+Sol. it is similiar term to that of throw in java, it will raise a exception if some condition occurs.
+if something:
+   raise Exception('My error!')
+	 
 Q26. What does the assert statement do, and what other statement is it like?
-
+Sol. It is kind off similiar to that of raise statement but it is actually meant for the debugging purpose.
+while raise is for handling the exception.
+if not condition:
+  raise AssertionError()
+	
 Q27. What is the purpose of the with/as argument, and what other statement is it like?
+Sol.
+ith statement is used in exception handling to make the code cleaner and much more readable.
+It simplifies the management of common resources like file streams. following code is example on 
+how the use of with statement makes code cleaner. 
 
+# file handling
+
+# 1) without using with statement
+file = open('file_path', 'w')
+file.write('hello world !')
+file.close()
+
+# 2) without using with statement
+file = open('file_path', 'w')
+try:
+    file.write('hello world')
+finally:
+    file.close()
+
+# using with statement
+with open('file_path', 'w') as file:
+    file.write('hello world !')
+		
 Q28. What are *args, **kwargs?
-
+SOl.  *args: pass a variable number of arguments to a function. It is used to pass a non-keyworded, variable-length argument list
+     **kwargs: used to pass a keyworded, variable-length argument list. We use the name kwargs with the double star. The reason is that the double star allows us to pass through keyword arguments
+		 
+		 
 Q29. How can I pass optional or keyword parameters from one function to another?
+SOl. To pass, collect the arguments using the * and ** in the function’s parameter list. Through this, you will get the positional arguments as a tuple and the keyword arguments as a dictionary. Pass these arguments when calling another function by using * and ** −
 
 Q30. What are Lambda Functions?
+Sol. These are nanaonymous functions and can take as many arguments as we want. 
 
 Q31. Explain Inheritance in Python with an example?
+Sol. Inheritance allows you to inherit the properties of a class
+class Person(object):
+   
+ 
+  def __init__(self, name, id):
+    self.name = name
+    self.id = id
+ 
+  def Display(self):
+    print(self.name, self.id)
+ 
+
+emp = Person("Farheen", 102) 
+emp.Display()
+
 
 Q32. Suppose class C inherits from classes A and B as class C(A,B).Classes A and B both have their own versions of method func(). If we call func() from an object of class C, which version gets invoked?
+Sol.
+class A:
+  def test(self):
+    print("it is from A class ")
+class B:
+  def test(self):
+    print("it is from B class ")
+class C(A,B):
+  pass
+obj = C()
+obj.test() 
+
+o/p:
+it is from A class 
+
+#It can be inherited another way
+class A:
+  def test(self):
+    print("it is from A class ")
+class B:
+  def test(self):
+    print("it is from B class ")
+class C(B,A):
+  pass
+
+obj = C()
+obj.test() 
+
+o/p:
+it is from B class
+B would be called
 
 Q33. Which methods/functions do we use to determine the type of instance and inheritance?
-
+Sol.
+Two built-in functions isinstance() and issubclass() are used to check inheritances.
+ The function isinstance() returns True if the object is an instance of the class or other
+ classes derived from it.Each and every class in Python inherits from the base class object.
+ 
+ Similarly, issubclass() is used to check for class inheritance.
+ 
 Q34.Explain the use of the 'nonlocal' keyword in Python.
+Sol.
+nonlocal keyword work with variables inside nested functions, where the variable should not belong to the inner function
 
 Q35. What is the global keyword?
+SOl Global keyword before any variable will make the variable accesible to the whole class.
